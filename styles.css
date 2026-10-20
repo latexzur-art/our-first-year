@@ -1,12 +1,12 @@
 :root {
   color-scheme: dark;
-  --background: #0b1020;
-  --surface: rgba(20, 27, 51, 0.74);
-  --text: #f4f2ed;
-  --muted: #9ca5c0;
-  --accent: #f4a261;
-  --accent-soft: #f8c29a;
-  --line: rgba(255, 255, 255, 0.12);
+  --background: #080808;
+  --surface: rgba(27, 18, 24, 0.8);
+  --text: #fff7fb;
+  --muted: #c1aab5;
+  --accent: #f27ab2;
+  --accent-soft: #f8b6d3;
+  --line: rgba(255, 191, 218, 0.18);
 }
 
 * {
@@ -33,7 +33,7 @@ body {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 50% -20%, rgba(48, 61, 115, 0.55), transparent 47%),
+    radial-gradient(circle at 50% -20%, rgba(119, 36, 82, 0.48), transparent 47%),
     var(--background);
 }
 
@@ -62,13 +62,13 @@ body {
 .ambient-left {
   top: 35%;
   left: -22rem;
-  background: #db6e61;
+  background: #f05c9d;
 }
 
 .ambient-right {
   top: 8%;
   right: -22rem;
-  background: #4c7bc7;
+  background: #b83b7c;
 }
 
 .topbar,
@@ -103,7 +103,7 @@ body {
   height: 1.1rem;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(244, 162, 97, 0.12);
+  box-shadow: 0 0 0 4px rgba(242, 122, 178, 0.14);
 }
 
 .status-pill {
@@ -251,7 +251,7 @@ h1 em {
 
 .timezone-note {
   margin: 1.1rem 0 0;
-  color: #69738f;
+  color: #8e6e7d;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
@@ -261,7 +261,7 @@ h1 em {
   align-items: center;
   gap: 1rem;
   padding-bottom: 2rem;
-  color: #69738f;
+  color: #8e6e7d;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
