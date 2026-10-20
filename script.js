@@ -62,5 +62,20 @@ document.querySelector("#test-button").addEventListener("click", () => {
   countdownInterval = window.setInterval(updateCountdown, 1000);
 });
 
+document.querySelector("#return-button").addEventListener("click", () => {
+  testTarget = null;
+  hasRevealed = false;
+  document.querySelector(".hero").classList.remove("is-hidden");
+  document.querySelector("#transition-loader").classList.remove("is-visible");
+
+  const content = document.querySelector("#reveal-content");
+  content.hidden = true;
+  content.classList.remove("is-visible");
+
+  updateCountdown();
+  clearInterval(countdownInterval);
+  countdownInterval = window.setInterval(updateCountdown, 1000);
+});
+
 updateCountdown();
 countdownInterval = window.setInterval(updateCountdown, 1000);

@@ -229,6 +229,11 @@ h1 em {
   outline: none;
 }
 
+.return-button {
+  display: block;
+  margin: 3rem auto 0;
+}
+
 .hero.is-hidden {
   display: none;
 }
@@ -445,18 +450,19 @@ h1 em {
     transform: translateY(1rem);
   }
 
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  @keyframes reveal-in {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
+}
+
+@keyframes reveal-in {
   to {
     opacity: 1;
     transform: translateY(0);
