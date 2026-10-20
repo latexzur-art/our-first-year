@@ -5,13 +5,17 @@ const units = {
   minutes: document.querySelector('[data-unit="minutes"]'),
   seconds: document.querySelector('[data-unit="seconds"]'),
 };
+let countdownInterval;
+let testTarget;
+let hasRevealed = false;
 
 function formatUnit(value) {
   return String(value).padStart(2, "0");
 }
 
 function updateCountdown() {
-  const remaining = Math.max(0, targetDate.getTime() - Date.now());
+  const endTime = testTarget || targetDate.getTime();
+  const remaining = Math.max(0, endTime - Date.now());
   const totalSeconds = Math.floor(remaining / 1000);
   const days = Math.floor(totalSeconds / 86400);
   const hours = Math.floor((totalSeconds % 86400) / 3600);
@@ -25,9 +29,38 @@ function updateCountdown() {
 
   if (remaining === 0) {
     clearInterval(countdownInterval);
-    document.querySelector(".intro").textContent = "The moment has arrived. Thanks for being here.";
+    startReveal();
   }
 }
 
+function startReveal() {
+  if (hasRevealed) {
+    return;
+  }
+
+  hasRevealed = true;
+  document.querySelector(".hero").classList.add("is-hidden");
+  const loader = document.querySelector("#transition-loader");
+  loader.classList.add("is-visible");
+
+  window.setTimeout(() => {
+    loader.classList.remove("is-visible");
+    const content = document.querySelector("#reveal-content");
+    content.hidden = false;
+    content.classList.add("is-visible");
+  }, 1400);
+}
+
+document.querySelector("#test-button").addEventListener("click", () => {
+  if (hasRevealed) {
+    return;
+  }
+
+  testTarget = Date.now() + 3000;
+  updateCountdown();
+  clearInterval(countdownInterval);
+  countdownInterval = window.setInterval(updateCountdown, 1000);
+});
+
 updateCountdown();
-const countdownInterval = setInterval(updateCountdown, 1000);
+countdownInterval = window.setInterval(updateCountdown, 1000);

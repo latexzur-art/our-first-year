@@ -56,6 +56,36 @@
         </div>
 
         <p class="timezone-note">Counting down in your local time</p>
+        <button class="test-button" id="test-button" type="button">Test reveal</button>
+      </section>
+
+      <div class="transition-loader" id="transition-loader" aria-hidden="true">
+        <span class="loader-ring"></span>
+      </div>
+
+      <section class="reveal-content" id="reveal-content" aria-labelledby="reveal-title" hidden>
+        <div class="message-window">
+          <div class="window-bar">
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-title">a little message</span>
+          </div>
+          <div class="message-body">
+            <p class="message-label">from me, to you</p>
+            <h2 id="reveal-title">For my favorite person.</h2>
+            <p class="message-text">
+              This is where your message will go. Something honest, warm, and completely yours.
+            </p>
+          </div>
+        </div>
+
+        <div class="collage" aria-label="A collection of favorite memories">
+          <div class="photo-placeholder photo-one"><span>your photo</span></div>
+          <div class="photo-placeholder photo-two"><span>your photo</span></div>
+          <div class="photo-placeholder photo-three"><span>your photo</span></div>
+          <div class="photo-placeholder photo-four"><span>your photo</span></div>
+        </div>
       </section>
 
     </main>
