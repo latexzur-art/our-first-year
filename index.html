@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A live countdown to October 23, 2026." />
+    <meta name="theme-color" content="#0b1020" />
+    <title>Something is on the way | October 23, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <div class="ambient ambient-left" aria-hidden="true"></div>
+      <div class="ambient ambient-right" aria-hidden="true"></div>
+
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="Home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>THE NEXT CHAPTER</span>
+        </a>
+        <span class="status-pill"><span class="status-dot"></span> Mark your calendar</span>
+      </nav>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A new moment is approaching</p>
+        <h1 id="page-title">Good things<br /><em>take time.</em></h1>
+        <p class="intro">
+          We’re getting everything ready. Stay close — something worth waiting for arrives
+          <strong>October 23, 2026.</strong>
+        </p>
+
+        <div class="countdown-card" aria-live="polite">
+          <div class="countdown" id="countdown">
+            <div class="time-unit">
+              <span class="time-value" data-unit="days">--</span>
+              <span class="time-label">Days</span>
+            </div>
+            <span class="time-divider" aria-hidden="true">:</span>
+            <div class="time-unit">
+              <span class="time-value" data-unit="hours">--</span>
+              <span class="time-label">Hours</span>
+            </div>
+            <span class="time-divider" aria-hidden="true">:</span>
+            <div class="time-unit">
+              <span class="time-value" data-unit="minutes">--</span>
+              <span class="time-label">Minutes</span>
+            </div>
+            <span class="time-divider" aria-hidden="true">:</span>
+            <div class="time-unit">
+              <span class="time-value" data-unit="seconds">--</span>
+              <span class="time-label">Seconds</span>
+            </div>
+          </div>
+          <div class="target-date">
+            <span class="calendar-icon" aria-hidden="true">✦</span>
+            <span>Friday · October 23, 2026</span>
+          </div>
+        </div>
+
+        <p class="timezone-note">Counting down in your local time</p>
+      </section>
+
+      <footer class="footer">
+        <span>Stay curious.</span>
+        <span class="footer-rule" aria-hidden="true"></span>
+        <span>See you soon.</span>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
