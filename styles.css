@@ -330,6 +330,15 @@ h1 em {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.75;
+  text-align: left;
+}
+
+.message-text p {
+  margin: 0 0 1.25rem;
+}
+
+.message-text p:last-child {
+  margin-bottom: 0;
 }
 
 .collage {
