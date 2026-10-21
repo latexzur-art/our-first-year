@@ -59,6 +59,22 @@
         <button class="test-button" id="test-button" type="button">Test reveal</button>
       </section>
 
+      <div class="password-modal" id="password-modal" hidden>
+        <form class="password-card" id="password-form">
+          <button class="modal-close" id="modal-close" type="button" aria-label="Close password prompt">
+            ×
+          </button>
+          <p class="message-label">preview access</p>
+          <h2>Enter password to preview</h2>
+          <label for="test-password">Enter password to preview</label>
+          <input id="test-password" name="password" type="password" autocomplete="off" required />
+          <p class="password-error" id="password-error" role="alert" hidden>
+            That password is not correct.
+          </p>
+          <button class="test-button password-submit" type="submit">Unlock reveal</button>
+        </form>
+      </div>
+
       <div class="transition-loader" id="transition-loader" aria-hidden="true">
         <span class="loader-ring"></span>
       </div>

@@ -238,6 +238,89 @@ h1 em {
   display: none;
 }
 
+.password-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.password-modal[hidden] {
+  display: none;
+}
+
+.password-card {
+  position: relative;
+  width: min(24rem, 100%);
+  padding: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #1b1218;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
+.password-card h2 {
+  margin: 0 0 1.5rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+.password-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-align: left;
+}
+
+.password-card input {
+  width: 100%;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  outline: none;
+  background: #080808;
+  color: var(--text);
+  font: inherit;
+}
+
+.password-card input:focus {
+  border-color: var(--accent);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus-visible {
+  color: var(--accent-soft);
+}
+
+.password-error {
+  margin: 0.75rem 0 0;
+  color: #ff9fc7;
+  font-size: 0.75rem;
+}
+
+.password-submit {
+  margin-top: 1.25rem;
+}
+
 .transition-loader {
   display: none;
   align-items: center;

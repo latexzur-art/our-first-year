@@ -8,6 +8,7 @@ const units = {
 let countdownInterval;
 let testTarget;
 let hasRevealed = false;
+const passwordHash = "6cbf6903d6ef529642ac316e9516097c28c18eb76121083fba95ecceb1cf1a6d";
 
 function formatUnit(value) {
   return String(value).padStart(2, "0");
@@ -51,7 +52,46 @@ function startReveal() {
   }, 1400);
 }
 
-document.querySelector("#test-button").addEventListener("click", () => {
+async function hashPassword(password) {
+  const data = new TextEncoder().encode(password);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hash), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function openPasswordModal() {
+  const modal = document.querySelector("#password-modal");
+  modal.hidden = false;
+  document.querySelector("#test-password").focus();
+}
+
+function closePasswordModal() {
+  document.querySelector("#password-modal").hidden = true;
+  document.querySelector("#password-error").hidden = true;
+  document.querySelector("#password-form").reset();
+}
+
+document.querySelector("#test-button").addEventListener("click", openPasswordModal);
+
+document.querySelector("#modal-close").addEventListener("click", closePasswordModal);
+
+document.querySelector("#password-modal").addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) {
+    closePasswordModal();
+  }
+});
+
+document.querySelector("#password-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const password = new FormData(event.currentTarget).get("password");
+  const isCorrect = typeof password === "string" && (await hashPassword(password)) === passwordHash;
+
+  if (!isCorrect) {
+    document.querySelector("#password-error").hidden = false;
+    document.querySelector("#test-password").select();
+    return;
+  }
+
+  closePasswordModal();
   if (hasRevealed) {
     return;
   }
