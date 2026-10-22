@@ -573,6 +573,62 @@ h1 em {
   transition: transform 180ms ease;
 }
 
+.collage-photo:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 0.25rem;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem 2rem;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.image-viewer[hidden] {
+  display: none;
+}
+
+.image-viewer img {
+  max-width: min(92vw, 70rem);
+  max-height: 88vh;
+  border: 0.7rem solid #171014;
+  border-radius: 0.25rem;
+  object-fit: contain;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.55);
+  animation: image-open 220ms ease-out both;
+}
+
+.image-viewer-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(27, 18, 24, 0.9);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.image-viewer-close:hover,
+.image-viewer-close:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-soft);
+  outline: none;
+}
+
+.viewer-open {
+  overflow: hidden;
+}
+
 @media (max-width: 560px) {
   .hero {
     width: min(100% - 2rem, 1100px);
@@ -627,6 +683,15 @@ h1 em {
     height: 8rem;
     border-width: 0.4rem;
   }
+
+  .image-viewer {
+    padding: 4rem 0.75rem 1rem;
+  }
+
+  .image-viewer img {
+    max-width: 96vw;
+    border-width: 0.4rem;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -657,5 +722,16 @@ h1 em {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @keyframes image-open {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }

@@ -117,5 +117,46 @@ document.querySelector("#return-button").addEventListener("click", () => {
   countdownInterval = window.setInterval(updateCountdown, 1000);
 });
 
+function closeImageViewer() {
+  const viewer = document.querySelector("#image-viewer");
+  viewer.hidden = true;
+  document.body.classList.remove("viewer-open");
+}
+
+function openImageViewer(image) {
+  const viewer = document.querySelector("#image-viewer");
+  const enlargedImage = document.querySelector("#enlarged-image");
+  enlargedImage.src = image.src;
+  enlargedImage.alt = image.alt;
+  viewer.hidden = false;
+  document.body.classList.add("viewer-open");
+  document.querySelector("#image-viewer-close").focus();
+}
+
+document.querySelectorAll(".collage-photo").forEach((image) => {
+  image.tabIndex = 0;
+  image.addEventListener("click", () => openImageViewer(image));
+  image.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openImageViewer(image);
+    }
+  });
+});
+
+document.querySelector("#image-viewer-close").addEventListener("click", closeImageViewer);
+
+document.querySelector("#image-viewer").addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) {
+    closeImageViewer();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !document.querySelector("#image-viewer").hidden) {
+    closeImageViewer();
+  }
+});
+
 updateCountdown();
 countdownInterval = window.setInterval(updateCountdown, 1000);
