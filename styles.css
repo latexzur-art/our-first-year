@@ -433,44 +433,144 @@ h1 em {
   margin-top: 4rem;
 }
 
-.photo-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 12rem;
+.collage-photo {
+  display: block;
+  width: 100%;
+  height: 12rem;
   border: 0.7rem solid #171014;
-  color: rgba(255, 247, 251, 0.74);
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  object-fit: cover;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 .photo-one {
   grid-column: 1 / 6;
   transform: rotate(-5deg);
-  background: linear-gradient(135deg, #7b3158, #e895b9);
 }
 
 .photo-two {
   grid-column: 7 / 13;
   margin-top: 2rem;
   transform: rotate(4deg);
-  background: linear-gradient(135deg, #252025, #bc7196);
 }
 
 .photo-three {
   grid-column: 3 / 8;
   margin-top: -1rem;
   transform: rotate(3deg);
-  background: linear-gradient(135deg, #d56f9d, #3b1a2b);
 }
 
 .photo-four {
   grid-column: 9 / 13;
   margin-top: -2rem;
   transform: rotate(-6deg);
-  background: linear-gradient(135deg, #4b2940, #f4accd);
+}
+
+.photo-five {
+  grid-column: 1 / 5;
+  margin-top: -1rem;
+  transform: rotate(4deg);
+}
+
+.photo-six {
+  grid-column: 6 / 11;
+  margin-top: 1rem;
+  transform: rotate(-3deg);
+}
+
+.photo-seven {
+  grid-column: 11 / 13;
+  margin-top: -2rem;
+  transform: rotate(6deg);
+}
+
+.photo-eight {
+  grid-column: 2 / 7;
+  margin-top: 1rem;
+  transform: rotate(-4deg);
+}
+
+.photo-nine {
+  grid-column: 8 / 12;
+  margin-top: -1rem;
+  transform: rotate(5deg);
+}
+
+.photo-ten {
+  grid-column: 1 / 4;
+  margin-top: 1rem;
+  transform: rotate(-6deg);
+}
+
+.photo-eleven {
+  grid-column: 5 / 9;
+  transform: rotate(3deg);
+}
+
+.photo-twelve {
+  grid-column: 10 / 13;
+  margin-top: 2rem;
+  transform: rotate(-4deg);
+}
+
+.photo-thirteen {
+  grid-column: 2 / 6;
+  margin-top: -1rem;
+  transform: rotate(5deg);
+}
+
+.photo-fourteen {
+  grid-column: 7 / 11;
+  margin-top: 1rem;
+  transform: rotate(-3deg);
+}
+
+.photo-fifteen {
+  grid-column: 11 / 13;
+  margin-top: -2rem;
+  transform: rotate(7deg);
+}
+
+.photo-sixteen {
+  grid-column: 1 / 5;
+  margin-top: 1rem;
+  transform: rotate(-4deg);
+}
+
+.photo-seventeen {
+  grid-column: 5 / 8;
+  margin-top: -1rem;
+  transform: rotate(6deg);
+}
+
+.photo-eighteen {
+  grid-column: 9 / 13;
+  margin-top: 1rem;
+  transform: rotate(-5deg);
+}
+
+.photo-nineteen {
+  grid-column: 2 / 6;
+  margin-top: -1rem;
+  transform: rotate(3deg);
+}
+
+.photo-twenty {
+  grid-column: 7 / 10;
+  margin-top: 1rem;
+  transform: rotate(-6deg);
+}
+
+.photo-twenty-one {
+  grid-column: 10 / 13;
+  margin-top: -2rem;
+  transform: rotate(4deg);
+}
+
+.collage-photo:hover {
+  position: relative;
+  z-index: 1;
+  transform: rotate(0) scale(1.03);
+  transition: transform 180ms ease;
 }
 
 @media (max-width: 560px) {
@@ -523,10 +623,9 @@ h1 em {
     gap: 0.5rem;
   }
 
-  .photo-placeholder {
-    min-height: 8rem;
+  .collage-photo {
+    height: 8rem;
     border-width: 0.4rem;
-    font-size: 0.5rem;
   }
 }
 
